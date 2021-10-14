@@ -3,7 +3,7 @@
 */
 #include <iostream>
 #include <cctype>
-
+#include "funcs.h"
 std::string removeLeadingSpaces(std::string line)
 {
     bool start=false;

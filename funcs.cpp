@@ -12,10 +12,11 @@ std::string removeLeadingSpaces(std::string line)
         return "";
     for (char c : line)
     {
-        if (start)
-            output+=c;
-        else if (isspace(c))
+        if (!isspace(c))
             start=true;
+        if (start)
+		output+=c;
+
     }
     return output;
 }

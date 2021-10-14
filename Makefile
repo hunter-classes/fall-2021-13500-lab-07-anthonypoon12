@@ -12,5 +12,7 @@ unindent: unindent.o funcs.o
 	g++ -o unindent unindent.o funcs.o
 unindent.o: unindent.cpp funcs.h
 	g++ -c unindent.cpp
+indent: indent.o funcs.o
+	g++ -o indent indent.o funcs.o
 clean:
-	rm -f tests.o funcs.o tests main main.o unindent unindent.o
+	rm -f tests.o funcs.o tests main main.o unindent unindent.o indent indent.o

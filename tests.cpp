@@ -7,5 +7,5 @@ TEST_CASE("removeLeadingSpaces")
     CHECK(removeLeadingSpaces("")=="");
     CHECK(removeLeadingSpaces("         hello")=="hello");
     CHECK(removeLeadingSpaces("         hello2   ")=="hello2   ");
-    CHECK(removeLeadingSpaces(" hello3      ")=="hello3        ");
+    CHECK(removeLeadingSpaces(" hello3		")=="hello3		");
 }

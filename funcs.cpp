@@ -20,3 +20,15 @@ std::string removeLeadingSpaces(std::string line)
     }
     return output;
 }
+int countChar(std::string line, char c)
+{
+	int output = 0;
+	if (line=="")
+		return 0;
+	for (char d : line)
+	{
+		if (d == c)
+			output ++;
+	}
+	return output;
+}

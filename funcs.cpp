@@ -53,7 +53,6 @@ std::string unindent(std::string filename)
         output+="\n";
     }
 	file.close();
-std::cout<<"hello";
     return output;
 }
 std::string indent(std::string filename)
@@ -69,15 +68,14 @@ std::string indent(std::string filename)
     }
     while (getline(file,dum))
     {
-        std::string dum = removeLeadingSpaces(dum);
+        std::string dum1 = removeLeadingSpaces(dum);
         for (int i =0;i<counter;i++)
-		dum="\t"+dum;
-	if (countChar(dum, '{')>0)
+		dum1="\t"+dum1;
+	if (countChar(dum1, '{')>0)
 		counter++;
-	if (countChar(dum, '}')>0)
+	if (countChar(dum1, '}')>0)
 		counter--;
-//	std::cout<<"hi";
-        output+=dum + "\n";
+        output+=dum1 + "\n";
     }
 file.close();
 	return output;

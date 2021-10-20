@@ -1,11 +1,17 @@
 #include <iostream>
 #include "funcs.h"
-int main()
+int unindent()
 {
 	std::string input;
+	std::string output = "";
 	while (getline(std::cin,input))
 	{
-		std::cout<<removeLeadingSpaces(input)<<"\n";
+		output+=removeLeadingSpaces(input)+"\n";
 	}
+	return output;
+}
+int main()
+{
+	std::cout<<output;
 	return 0;
 }

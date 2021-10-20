@@ -1,6 +1,13 @@
+/*
+Author: Anthony Poon
+Course: CSCI-135
+Instructor: Tong Yi/Mike Zamansky
+Assignment: Lab 7
+ Reads a file and indents it properly
+*/
 #include <iostream>
 #include "funcs.h"
-int main()
+std::string indent()
 {
 	std::string input;
 	std::string output = "";
@@ -16,7 +23,11 @@ int main()
 			counter--;
 		output += dummy;
 	}
-	std::cout<<output;
+	return output;
+}
+int main()
+{
+		std::cout<<indent();
 	return 0;
 }
 

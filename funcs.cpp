@@ -1,4 +1,8 @@
 /*
+Author: Anthony Poon
+Course: CSCI-135
+Instructor: Tong Yi/Mike Zamansky
+Assignment: Lab 7
  Task A: that takes one line of code as input and returns its copy without leading spaces and tabs
 */
 #include <iostream>

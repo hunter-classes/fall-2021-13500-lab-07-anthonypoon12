@@ -7,6 +7,7 @@ Assignment: Lab 7
 */
 #include <iostream>
 #include <cctype>
+#include <fstream>
 #include "funcs.h"
 std::string removeLeadingSpaces(std::string line)
 {
@@ -34,5 +35,45 @@ int countChar(std::string line, char c)
 		if (d == c)
 			output ++;
 	}
+	return output;
+}
+std::string unindent(std::ifstream file)
+{
+    std::string output = "";
+    std::string dum;
+    if (file.fail())
+    {
+        std::cerr<<"Can't be read!\n";
+        exit(1);
+    }
+    while (getline(file,dum))
+    {
+        output+=removeLeadingSpaces(dum);
+        output+="\n";
+    }
+    return output;
+}
+std::string indent(std::ifstream file)
+{
+    int counter = 0;
+    std::string output = "";
+    std::string dum;
+    if (file.fail())
+    {
+        std::cerr<<"Can't be read!\n";
+        exit(1);
+    }
+    while (getline(file,dum))
+    {
+        std::string dum = removeLeadingSpaces(dum);
+        for (int i =0;i<counter;i++)
+			dum="\t"+dum;
+		if (countChar(dum, '{')>0)
+			counter++;
+		if (countChar(dum, '}')>0)
+			counter--;
+		output += dum;
+        output+="\n";
+    }
 	return output;
 }

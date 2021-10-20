@@ -1,6 +1,6 @@
 #include <iostream>
 #include "funcs.h"
-int unindent()
+std::string unindent()
 {
 	std::string input;
 	std::string output = "";
@@ -12,6 +12,6 @@ int unindent()
 }
 int main()
 {
-	std::cout<<output;
+	std::cout<<unindent();
 	return 0;
 }

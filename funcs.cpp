@@ -37,8 +37,9 @@ int countChar(std::string line, char c)
 	}
 	return output;
 }
-std::string unindent(std::ifstream file)
+std::string unindent(std::string filename)
 {
+	std::ifstream file(filename);
     std::string output = "";
     std::string dum;
     if (file.fail())
@@ -51,13 +52,16 @@ std::string unindent(std::ifstream file)
         output+=removeLeadingSpaces(dum);
         output+="\n";
     }
+	file.close();
+std::cout<<"hello";
     return output;
 }
-std::string indent(std::ifstream file)
+std::string indent(std::string filename)
 {
+	std::ifstream file(filename);
     int counter = 0;
     std::string output = "";
-    std::string dum;
+    std::string dum="";
     if (file.fail())
     {
         std::cerr<<"Can't be read!\n";
@@ -67,13 +71,14 @@ std::string indent(std::ifstream file)
     {
         std::string dum = removeLeadingSpaces(dum);
         for (int i =0;i<counter;i++)
-			dum="\t"+dum;
-		if (countChar(dum, '{')>0)
-			counter++;
-		if (countChar(dum, '}')>0)
-			counter--;
-		output += dum;
-        output+="\n";
+		dum="\t"+dum;
+	if (countChar(dum, '{')>0)
+		counter++;
+	if (countChar(dum, '}')>0)
+		counter--;
+//	std::cout<<"hi";
+        output+=dum + "\n";
     }
+file.close();
 	return output;
 }

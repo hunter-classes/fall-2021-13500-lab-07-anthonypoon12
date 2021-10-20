@@ -1,9 +1,10 @@
 #include <iostream>
-#include <iostream>
+#include <fstream>
 #include "funcs.h"
 int main()
 {
-    ifstream file("bad-code.cpp");
-    std::cout<<unindent(file)<<"\n";
+    std::string file ("bad-code.cpp");
     std::cout<<indent(file)<<"\n";
+//	std::cout<<"hello";
+//    std::cout<<indent(file)<<"\n";
 }

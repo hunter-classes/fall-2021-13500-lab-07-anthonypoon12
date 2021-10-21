@@ -7,7 +7,8 @@
 * GitHub username: anthonypoon12
 
 * Notes:
-
+The unindent and indent functions take the text in a file to output a string,
+so it is tested in main.cpp
 
   
 * General instructions:

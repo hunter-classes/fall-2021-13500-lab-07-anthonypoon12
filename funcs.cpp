@@ -37,7 +37,7 @@ int countChar(std::string line, char c)
 	}
 	return output;
 }
-std::string unindent(std::string filename)
+std::string unindent(std::string filename,std::string outfilename)
 {
 	std::ifstream file(filename);
     std::string output = "";
@@ -53,9 +53,12 @@ std::string unindent(std::string filename)
         output+="\n";
     }
 	file.close();
+	std::ofstream outfile(outfilename);
+	outfile<<output;
+	outfile.close();
     return output;
 }
-std::string indent(std::string filename)
+std::string indent(std::string filename,std::string outfilename)
 {
 	std::ifstream file(filename);
     int counter = 0;
@@ -78,5 +81,8 @@ std::string indent(std::string filename)
         output+=dum1 + "\n";
     }
 file.close();
+	std::ofstream outfile(outfilename);
+	outfile<<output;
+	outfile.close();
 	return output;
 }

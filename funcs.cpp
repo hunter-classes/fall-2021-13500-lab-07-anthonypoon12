@@ -58,6 +58,13 @@ std::string unindent(std::string filename,std::string outfilename)
 	outfile.close();
     return output;
 }
+std::string helper (std::string input)
+{
+  std::string output = "";
+  for (int i = 1; i<input.size();i++)
+    output+=input[i];
+  return output;
+}
 std::string indent(std::string filename,std::string outfilename)
 {
 	std::ifstream file(filename);
@@ -73,11 +80,14 @@ std::string indent(std::string filename,std::string outfilename)
     {
         std::string dum1 = removeLeadingSpaces(dum);
         for (int i =0;i<counter;i++)
-		dum1="\t"+dum1;
+		       dum1="\t"+dum1;
 	if (countChar(dum1, '{')>0)
 		counter++;
 	if (countChar(dum1, '}')>0)
-		counter--;
+    {
+    dum1 = helper(dum1);
+    counter--;
+    }
         output+=dum1 + "\n";
     }
 file.close();

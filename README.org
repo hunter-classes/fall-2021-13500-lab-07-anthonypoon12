@@ -1,13 +1,14 @@
 * Fall 2021 - Lab 07
 
-* Last name:
+* Last name: Poon
 
-* First name:
+* First name: Anthony
 
-* GitHub username:
+* GitHub username: anthonypoon12
 
 * Notes:
-
+   The unindent and indent functions take the text in a file to output a string, as well as create a new file with the text.
+   This can be seen in main.cpp. The main file prints the text unindented, then prints the text correctly indented, and creates files with the text.
 
   
 * General instructions:

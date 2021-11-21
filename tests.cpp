@@ -2,6 +2,7 @@
 #include "doctest.h"
 #include "funcs.h"
 
+
 TEST_CASE("removeLeadingSpaces")
 {
     CHECK(removeLeadingSpaces("")=="");
@@ -9,6 +10,8 @@ TEST_CASE("removeLeadingSpaces")
     CHECK(removeLeadingSpaces("         hello2   ")=="hello2   ");
     CHECK(removeLeadingSpaces(" hello3		")=="hello3		");
 }
+
+
 TEST_CASE("countChar")
 {
 	CHECK(countChar("",'a')==0);

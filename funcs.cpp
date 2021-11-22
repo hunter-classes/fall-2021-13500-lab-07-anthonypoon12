@@ -15,27 +15,36 @@ Assignment: Lab 7
 
 std::string removeLeadingSpaces(std::string line)
 {
-    // the boolean variable is unnecessary here. When you test line == "", you are testing if
-    // it's empty, instead you could test if line[0] != " " to see if you need to remove any spaces.
-    bool start = false;
     std::string output = "";
-
     if (line == "")
         return "";
 
-    for (char c : line)
+    for (int i = 0; i < line.length(); i++)
     {
-        if (!isspace(c))
-            start = true;
-        if (start)
-            output += c;
+        if (!isspace(line[i])){
+            output += line.substr(i);
+            break;
+            
+        }
     }
     return output;
 }
 
 
+
+// Changed since you don't need to declare a variable to return: only need to conditionalize.
 int countChar(std::string line, char c)
 {
+    if (line == ""){
+        return 0;
+    }
+    for (char d : line){
+        if (d == c){
+            return 1;
+        }
+    }
+    return -1;
+    /*
     int output = 0;
     if (line == "")
         return 0;
@@ -47,6 +56,7 @@ int countChar(std::string line, char c)
     }
 
     return output;
+*/
 }
 
 
